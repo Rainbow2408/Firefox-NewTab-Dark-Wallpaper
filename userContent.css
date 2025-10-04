@@ -1,0 +1,52 @@
+/* 強制新分頁使用深色主題 */
+@-moz-document url("about:home"), url("about:newtab") {
+
+    /* 強制 body 使用深色配色方案 */
+    body.lightWallpaper {
+        color-scheme: dark !important;
+    }
+
+    /* 覆寫所有 lightWallpaper 相關的 color-scheme */
+    .lightWallpaper .wallpaper-attribution,
+    .lightWallpaper .logo-and-wordmark .wordmark,
+    .lightWallpaper .top-sites-list:not(.dnd-active) .top-site-outer:is(.active, :focus, :hover),
+    .lightWallpaper .top-site-outer:not(:hover, :active, .active),
+    .lightWallpaper .top-site-outer:hover .context-menu-button,
+    .lightWallpaper .top-site-outer:focus .context-menu-button,
+    .lightWallpaper .ds-header,
+    .lightWallpaper .ds-layout .section-title span,
+    .lightWallpaper .collapsible-section.ds-layout .section-top-bar .learn-more-link,
+    .lightWallpaper .ds-section-wrapper .ds-section .section-title,
+    .lightWallpaper .ds-section-wrapper .ds-section .section-subtitle,
+    .lightWallpaper .ds-section-wrapper .section-context-wrapper,
+    .lightWallpaper .ds-navigation,
+    .lightWallpaper .personalize-button,
+    .lightWallpaper .personalize-button:hover .context-menu-button,
+    .lightWallpaper .personalize-button:focus .context-menu-button,
+    .lightWallpaper .mobile-download-promo,
+    .lightWallpaper .location-input-wrapper,
+    .lightWallpaper .weatherNotAvailable,
+    .lightWallpaper .weatherInfoLink,
+    .lightWallpaper .weatherButtonContextMenuWrapper,
+    .lightWallpaper .weatherSponsorText,
+    .lightWallpaper .lists .empty-list,
+    .lightWallpaper .collapsible-section .button-topic-selection moz-button[type=default]::part(button),
+    .lightWallpaper .inline-selection-wrapper.ds-section .learn-more-copy {
+        color-scheme: dark !important;
+    }
+
+    /* 覆寫 contrast 模式下的設定 */
+    @media (prefers-contrast) {
+
+        .lightWallpaper .top-sites-list:not(.dnd-active) .top-site-outer:is(.active, :focus, :hover),
+        .lightWallpaper .personalize-button,
+        .lightWallpaper .mobile-download-promo,
+        .lightWallpaper .location-input-wrapper,
+        .lightWallpaper .weatherNotAvailable,
+        .lightWallpaper .weatherInfoLink,
+        .lightWallpaper .weatherButtonContextMenuWrapper,
+        .lightWallpaper .collapsible-section .button-topic-selection moz-button[type=default]::part(button) {
+            background-color: var(--background-color-box) !important;
+        }
+    }
+}
